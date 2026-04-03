@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Return xmlns="http://www.irs.gov/efile">
+  <ReturnHeader>
+    <Filer>
+      <EIN>123456789</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>Sample Helping Hands</BusinessNameLine1Txt>
+      </BusinessName>
+      <USAddress>
+        <AddressLine1Txt>123 Main Street</AddressLine1Txt>
+        <CityNm>Springfield</CityNm>
+        <StateAbbreviationCd>IL</StateAbbreviationCd>
+        <ZIPCd>62701</ZIPCd>
+      </USAddress>
+    </Filer>
+    <TaxPeriodEndDt>2024-12-31</TaxPeriodEndDt>
+    <ReturnTypeCd>990</ReturnTypeCd>
+  </ReturnHeader>
+  <ReturnData>
+    <IRS990>
+      <TaxYr>2024</TaxYr>
+      <ActivityOrMissionDesc>Provide emergency housing and meal support for families in crisis.</ActivityOrMissionDesc>
+      <TotalEmployeeCnt>24</TotalEmployeeCnt>
+      <TotalVolunteersCnt>180</TotalVolunteersCnt>
+      <CYTotalRevenueAmt>1500000</CYTotalRevenueAmt>
+      <CYTotalExpensesAmt>1325000</CYTotalExpensesAmt>
+      <TotalAssetsEOYAmt>4100000</TotalAssetsEOYAmt>
+      <TotalLiabilitiesEOYAmt>725000</TotalLiabilitiesEOYAmt>
+      <NetAssetsOrFundBalancesEOYAmt>3375000</NetAssetsOrFundBalancesEOYAmt>
+      <CYContributionsGrantsAmt>975000</CYContributionsGrantsAmt>
+      <CYProgramServiceRevenueAmt>480000</CYProgramServiceRevenueAmt>
+      <CYInvestmentIncomeAmt>12000</CYInvestmentIncomeAmt>
+      <ProgramServiceAccomplishmentsTxt>Operated transitional housing for 85 households.</ProgramServiceAccomplishmentsTxt>
+      <ProgramServiceAccomplishmentsTxt>Served 42,000 meals through neighborhood food partners.</ProgramServiceAccomplishmentsTxt>
+      <Form990PartVIISectionAGrp>
+        <PersonNm>Jane Doe</PersonNm>
+        <TitleTxt>Executive Director</TitleTxt>
+        <AverageHoursPerWeekRt>40</AverageHoursPerWeekRt>
+        <ReportableCompFromOrgAmt>125000</ReportableCompFromOrgAmt>
+      </Form990PartVIISectionAGrp>
+    </IRS990>
+  </ReturnData>
+</Return>

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nonprofit-data-gatherer"
+version = "0.1.0"
+description = "Modular nonprofit registry, filing ingestion, extraction, enrichment, and indexing pipeline."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx",
+  "openai",
+  "psycopg[binary]",
+  "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+
+[project.scripts]
+nonprofit-platform = "nonprofit_platform.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

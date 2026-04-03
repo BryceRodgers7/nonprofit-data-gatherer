@@ -1,0 +1,1 @@
+"""OpenAI-driven narrative enrichment."""
