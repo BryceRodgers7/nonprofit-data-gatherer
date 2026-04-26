@@ -7,6 +7,20 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
+def _load_dotenv_files(dotenv_path: str | Path | None) -> None:
+    """Populate os.environ from .env files. Never overrides keys already set in the environment."""
+    if dotenv_path:
+        load_dotenv(dotenv_path=Path(dotenv_path), override=False)
+        return
+    # Repo-root .env (works when the process cwd is not the project directory)
+    repo_root = Path(__file__).resolve().parents[2]
+    repo_env = repo_root / ".env"
+    if repo_env.is_file():
+        load_dotenv(dotenv_path=repo_env, override=False)
+    # Default: search upward from cwd for .env (python-dotenv behavior)
+    load_dotenv(override=False)
+
+
 def _get_bool(name: str, default: bool = False) -> bool:
     value = os.getenv(name)
     if value is None:
@@ -102,10 +116,7 @@ class AppConfig:
 
 
 def load_config(dotenv_path: str | Path | None = None) -> AppConfig:
-    if dotenv_path:
-        load_dotenv(dotenv_path=Path(dotenv_path), override=False)
-    else:
-        load_dotenv(override=False)
+    _load_dotenv_files(dotenv_path)
 
     database = DatabaseSettings(
         dsn=os.getenv("DATABASE_DSN", "postgresql://postgres:postgres@localhost:5432/postgres"),

@@ -105,32 +105,7 @@ Design notes:
 ## Local Setup
 1. Create a Python 3.11+ virtual environment.
 2. Install dependencies with `pip install -e .[dev]`.
-3. Create a `.env` file with values like:
-
-```env
-DATABASE_DSN=postgresql://postgres:postgres@localhost:5432/postgres
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-SUPABASE_STORAGE_BUCKET=raw-filings
-SUPABASE_STORAGE_PREFIX=irs-filings
-OPENAI_API_KEY=
-OPENAI_MODEL=gpt-4.1-mini
-OPENAI_PROMPT_VERSION=v1
-ENABLE_STORAGE=true
-ENABLE_ENRICHMENT=false
-ENABLE_INDEXING=false
-REGISTRY_SAMPLE_LIMIT=250
-FILING_SAMPLE_LIMIT=25
-CLAIM_BATCH_SIZE=20
-JOB_MAX_ATTEMPTS=5
-JOB_CLAIM_LEASE_SECONDS=600
-JOB_HEARTBEAT_INTERVAL_SECONDS=30
-ORCHESTRATOR_POLL_INTERVAL_SECONDS=5
-REGISTRY_SYNC_INTERVAL_SECONDS=3600
-FILING_DISCOVERY_INTERVAL_SECONDS=1800
-STALE_CLAIM_RECOVERY_INTERVAL_SECONDS=60
-FILING_YEARS_BACKFILL_START=2024
-```
+3. Copy [`.env.example`](.env.example) to `.env` in the repo root and set secrets and connection strings. All variables are documented there. `load_config()` loads `.env` from the project root automatically (even if your shell cwd is elsewhere), and you can still pass `nonprofit-platform --env-file path/to/.env ...` to point at a specific file.
 
 4. Review `sql/001_initial_schema.sql` and apply it manually to the target database when ready.
 
